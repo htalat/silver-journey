@@ -11,6 +11,7 @@
 		C62DF83328ACCCFB003842E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DF83228ACCCFB003842E0 /* ContentView.swift */; };
 		C62DF83528ACCCFC003842E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62DF83428ACCCFC003842E0 /* Assets.xcassets */; };
 		C62DF83828ACCCFC003842E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62DF83728ACCCFC003842E0 /* Preview Assets.xcassets */; };
+		C62DF84028ACCD44003842E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DF83F28ACCD44003842E0 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,8 @@
 		C62DF83428ACCCFC003842E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C62DF83728ACCCFC003842E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C62DF83928ACCCFC003842E0 /* SilverJourney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SilverJourney.entitlements; sourceTree = "<group>"; };
+		C62DF83F28ACCD44003842E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C62DF84128ACD009003842E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +55,13 @@
 		C62DF82F28ACCCFB003842E0 /* SilverJourney */ = {
 			isa = PBXGroup;
 			children = (
+				C62DF84128ACD009003842E0 /* Info.plist */,
 				C62DF83028ACCCFB003842E0 /* SilverJourneyApp.swift */,
 				C62DF83228ACCCFB003842E0 /* ContentView.swift */,
 				C62DF83428ACCCFC003842E0 /* Assets.xcassets */,
 				C62DF83928ACCCFC003842E0 /* SilverJourney.entitlements */,
 				C62DF83628ACCCFC003842E0 /* Preview Content */,
+				C62DF83F28ACCD44003842E0 /* AppDelegate.swift */,
 			);
 			path = SilverJourney;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62DF84028ACCD44003842E0 /* AppDelegate.swift in Sources */,
 				C62DF83328ACCCFB003842E0 /* ContentView.swift in Sources */,
 				C62DF83128ACCCFB003842E0 /* SilverJourneyApp.swift in Sources */,
 			);
@@ -274,6 +280,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SilverJourney/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +308,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SilverJourney/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
