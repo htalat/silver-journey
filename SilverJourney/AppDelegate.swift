@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
                                        Notification) {
         statusItem = NSStatusBar.system.statusItem(withLength:
         NSStatusItem.variableLength)
-        let itemImage = NSImage(systemSymbolName: "leaf.fill", accessibilityDescription: "leafy")
+        let itemImage = NSImage(systemSymbolName: "leaf.fill", accessibilityDescription: "leaf")
         itemImage?.isTemplate = true
         statusItem?.button?.image = itemImage
         
@@ -33,23 +33,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
     }
     
-    @objc func showSettings() {
+    func menuWillOpen(_ menu: NSMenu) {
         guard let statusBarButton = statusItem?.button else { return }
         popover.show(relativeTo: statusBarButton.bounds, of:statusBarButton, preferredEdge: .maxY)
-    }
-    
-    @objc func quitApp() {
-        NSApp.terminate(self)
-    }
-    
-    func addMenuItems() {
-      statusItem?.menu?.removeAllItems()
-      statusItem?.menu?.addItem(withTitle: "Settings", action: #selector(showSettings), keyEquivalent: "")
-      statusItem?.menu?.addItem(withTitle: "Quit", action: #selector(quitApp), keyEquivalent: "")
-   }
-    
-    func menuWillOpen(_ menu: NSMenu) {
-        addMenuItems()
-        popover.performClose(self)
     }
 }

@@ -38,8 +38,16 @@ final class SimpleParser: ObservableObject {
     @Published var commands: [Command] = []
     
     init(filename: String) {
-        let fileContents: String = load(filename)
         self.filename = filename
+        loadData()
+    }
+    
+    func getCommands() -> [Command] {
+        return commands
+    }
+    
+    func loadData() {
+        let fileContents: String = load(self.filename)
         if(!fileContents.isEmpty){
             fileContents.components(separatedBy: "\n\n").forEach { rawCommand in
                 self.commands.append(Command(cmd: rawCommand))
@@ -47,8 +55,9 @@ final class SimpleParser: ObservableObject {
         }
     }
     
-    func getCommands() -> [Command] {
-        return commands
+    func reload() {
+        self.commands = []
+        loadData()
     }
 }
 

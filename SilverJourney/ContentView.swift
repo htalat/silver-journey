@@ -17,13 +17,27 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Text(filename)
-            .onTapGesture {
-                let file = URL(fileURLWithPath: fullpath)
+            HStack {
+                Text(filename)
+                .onTapGesture {
+                    let file = URL(fileURLWithPath: fullpath)
 
-                // canonical path i.e. /User/path instead of file://User/path.
-                if let cp = (try? file.resourceValues(forKeys: [.canonicalPathKey]))?.canonicalPath {
-                    NSWorkspace.shared.selectFile(cp, inFileViewerRootedAtPath: "/Users/")
+                    // canonical path i.e. /User/path instead of file://User/path.
+                    if let cp = (try? file.resourceValues(forKeys: [.canonicalPathKey]))?.canonicalPath {
+                        NSWorkspace.shared.selectFile(cp, inFileViewerRootedAtPath: "/Users/")
+                    }
+                }
+
+                Button {
+                    modelData.reload()
+                } label: {
+                    Image(systemName:"square.and.arrow.down")
+                }
+
+                Button {
+                    NSApp.terminate(self)
+                } label: {
+                    Text("Quit")
                 }
             }
 
