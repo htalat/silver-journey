@@ -8,36 +8,46 @@
 import SwiftUI
 import AppKit
 
-struct Command: Identifiable {
-  var id = UUID()
-  var isActive: Bool = true
-  var cmd: String
-}
-
-extension Command {
-  static let samples = [
-    Command(cmd: "git status"),
-    Command(cmd: "git remote -v"),
-    Command(cmd: "ls -alh")
-  ]
-}
-
 struct ContentView: View {
+
+    @StateObject private var modelData = SimpleParser(filename: fullpath)
     private let pasteboard = NSPasteboard.general
+    @State var username: String = ""
+    @State private var isSelected: Bool = false
 
     var body: some View {
         VStack {
-            List(Command.samples) { command in
-                HStack{
-                    Text("\(command.cmd)")
-                    Spacer()
-                    Button {
-                        copyToClipboard(command: command.cmd)
-                    } label: {
-                        Image(systemName:"doc.on.doc.fill")
-                    }
+            Text(filename)
+            .onTapGesture {
+                let file = URL(fileURLWithPath: fullpath)
+
+                // canonical path i.e. /User/path instead of file://User/path.
+                if let cp = (try? file.resourceValues(forKeys: [.canonicalPathKey]))?.canonicalPath {
+                    NSWorkspace.shared.selectFile(cp, inFileViewerRootedAtPath: "/Users/")
                 }
             }
+
+            if(modelData.commands.isEmpty){
+                Text("file is empty. Go add some stuff")
+            }else{
+                List(modelData.commands) { command in
+                    HStack{
+                        Text("\(command.cmd)")
+                        Spacer()
+                        Button {
+                            copyToClipboard(command: command.cmd)
+                        } label: {
+                            Image(systemName:"doc.on.doc.fill")
+                        }
+                    }
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.blue, lineWidth: 3)
+                    )
+                }
+            }
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -45,11 +55,6 @@ struct ContentView: View {
     func copyToClipboard(command: String) {
         pasteboard.clearContents()
         pasteboard.setString(command, forType: .string)
-
-//        Animate on copy.
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//            self.buttonText = "Copy to clipboard"
-//        }
     }
 }
 

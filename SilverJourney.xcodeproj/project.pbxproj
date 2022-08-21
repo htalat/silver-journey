@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C603F5BC28B29E35002A03B8 /* SimpleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C603F5BB28B29E35002A03B8 /* SimpleParser.swift */; };
 		C62DF83128ACCCFB003842E0 /* SilverJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DF83028ACCCFB003842E0 /* SilverJourneyApp.swift */; };
 		C62DF83328ACCCFB003842E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DF83228ACCCFB003842E0 /* ContentView.swift */; };
 		C62DF83528ACCCFC003842E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62DF83428ACCCFC003842E0 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C603F5BB28B29E35002A03B8 /* SimpleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleParser.swift; sourceTree = "<group>"; };
 		C62DF82D28ACCCFB003842E0 /* SilverJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilverJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62DF83028ACCCFB003842E0 /* SilverJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilverJourneyApp.swift; sourceTree = "<group>"; };
 		C62DF83228ACCCFB003842E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				C62DF83928ACCCFC003842E0 /* SilverJourney.entitlements */,
 				C62DF83628ACCCFC003842E0 /* Preview Content */,
 				C62DF83F28ACCD44003842E0 /* AppDelegate.swift */,
+				C603F5BB28B29E35002A03B8 /* SimpleParser.swift */,
 			);
 			path = SilverJourney;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C62DF84028ACCD44003842E0 /* AppDelegate.swift in Sources */,
+				C603F5BC28B29E35002A03B8 /* SimpleParser.swift in Sources */,
 				C62DF83328ACCCFB003842E0 /* ContentView.swift in Sources */,
 				C62DF83128ACCCFB003842E0 /* SilverJourneyApp.swift in Sources */,
 			);
